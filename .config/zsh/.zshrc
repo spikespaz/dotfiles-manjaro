@@ -4,12 +4,20 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # Custom auto-update portion
-PLUGINS_DIRECTORY="$HOME/.zsh_plugins"
+PLUGINS_DIRECTORY="$HOME/.config/zsh/plugins"
 PLUGINS_LASTUPDATE_FILE="$PLUGINS_DIRECTORY/.lastupdate"
 PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60)) # every two days
 
-znap_init() {    
-  source "$PLUGINS_DIRECTORY/zsh-snap/znap.zsh"
+[[ ! -d "$PLUGINS_DIRECTORY" ]] &&
+  mkdir -p "$PLUGINS_DIRECTORY"
+
+znap_init() {
+  local znap="$PLUGINS_DIRECTORY/zsh-snap/znap.zsh"
+
+  [[ ! -f "$znap" ]] &&
+    git clone 'https://github.com/marlonrichert/zsh-snap' "$(dirname "$znap")" 
+
+  source "$znap"
 
   [[ ! -f "$PLUGINS_LASTUPDATE_FILE" ]] &&
     echo 0 > "$PLUGINS_LASTUPDATE_FILE"
@@ -39,7 +47,7 @@ setopt autocd extendedglob nomatch
 unsetopt notify
 
 # Enable key for Vi mode
-bindkey -e
+bindkey -v
 
 # Set generic keybinds
 bindkey '^[[3~' delete-char
