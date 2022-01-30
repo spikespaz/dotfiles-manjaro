@@ -1,23 +1,16 @@
 # Increase history size
-HISTFILE=~/.histfile
+#HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 
-# Custom auto-update portion
-PLUGINS_DIRECTORY="$HOME/.config/zsh/plugins"
-PLUGINS_LASTUPDATE_FILE="$PLUGINS_DIRECTORY/.lastupdate"
-PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60)) # every two days
+# Update plugins every two days
+ZNAP_PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60))
 
 # Source the initializer for snap
-source "$ZDOTFILES/scripts/znap_init"
+source "$ZDOTDIR/scripts/znap_init.zsh"
 
-znap_setup() {
-  znap source zdharma-continuum/fast-syntax-highlighting
-  znap source marlonrichert/zsh-autocomplete
-}
-
-# Now init znap and plugins
-znap_init && znap_setup
+znap source zdharma-continuum/fast-syntax-highlighting
+znap source marlonrichert/zsh-autocomplete
 
 # Useful shell options
 setopt autocd extendedglob nomatch
