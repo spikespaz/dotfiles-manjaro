@@ -3,8 +3,7 @@
 *
 
 # Of course, now we need to unignore this file.
-# We also include all .gitignore files in subdirectories for later convenience.
-!**/.gitignore
+!.gitignore
 
 # Unignore empty directories, otherwise we will get warnings on commit.
 # This does not include the files within, and empty directories won't
