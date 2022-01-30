@@ -11,4 +11,5 @@
 # Files related to ZSH
 !.zshenv
 !.config/zsh/.zshrc
+!.config/zsh/scripts/*
 
