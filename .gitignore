@@ -5,11 +5,6 @@
 # Of course, now we need to unignore this file.
 !.gitignore
 
-# Unignore empty directories, otherwise we will get warnings on commit.
-# This does not include the files within, and empty directories won't
-# be picked up by git, so it won't leak private information.
-!**/
-
 # And now, the rest of this is just a whitelist for the directories and
 # files that should be automatically detected for version control.
 
