@@ -10,6 +10,9 @@
 
 # Files related to ZSH
 !.zshenv
+!.config/
+!.config/zsh/
 !.config/zsh/.zshrc
+!.config/zsh/scripts/
 !.config/zsh/scripts/*
 
