@@ -19,3 +19,7 @@
 # Powerlevel10K
 !.config/zsh/.p10k.zsh
 
+# Files related to Neovim
+!.config/nvim/
+!.config/nvim/init.vim
+
