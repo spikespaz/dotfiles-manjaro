@@ -1,5 +1,5 @@
-# Because this reposiroty lives in my home directory, ignore everything,
-# and add exceptions for the dotfiles and such.
+# Because this repository lives in my home directory, ignore everything,
+# and add exceptions for the dotfiles and such further below.
 *
 
 # Of course, now we need to unignore this file.
@@ -11,6 +11,10 @@
 # be picked up by git, so it won't leak private information.
 !**/
 
-# And now, the rest of this is just the directories and files that should
-# be automatically detected for version control.
+# And now, the rest of this is just a whitelist for the directories and
+# files that should be automatically detected for version control.
+
+# Files related to ZSH
+!.zshenv
+!.config/zsh/.zshrc
 
