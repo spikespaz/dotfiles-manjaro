@@ -16,3 +16,6 @@
 !.config/zsh/scripts/
 !.config/zsh/scripts/*
 
+# Powerlevel10K
+!.config/zsh/.p10k.zsh
+
