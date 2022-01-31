@@ -18,6 +18,24 @@ znap prompt romkatv/powerlevel10k
 # Source other plugins
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
+znap source hlissner/zsh-autopair
+
+
+# Set options for long-runnig task completion notifications
+AUTO_NOTIFY_THRESHOLD=120
+AUTO_NOTIFY_TITLE='Command "%command" has completed!'
+AUTO_NOTIFY_BODY='With exit code %exit_code after %elapsed seconds.'
+AUTO_NOTIFY_EXPIRE_TIME=15000
+
+znap source MichaelAquilina/zsh-auto-notify
+
+
+# Set options for automatic terminal title
+ZSH_TAB_TITLE_DEFAULT_DISABLE_PREFIX=true
+ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
+ZSH_TAB_TITLE_ADDITIONAL_TERMS='alacritty'
+
+znap source trystan2k/zsh-tab-title
 
 # Useful shell options
 setopt autocd extendedglob nomatch
