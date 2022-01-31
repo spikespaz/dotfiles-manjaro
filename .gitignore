@@ -7,10 +7,14 @@
 
 # And now, the rest of this is just a whitelist for the directories and
 # files that should be automatically detected for version control.
-
-# Files related to ZSH
-!.zshenv
 !.config/
+
+# Alacritty
+!.config/alacritty/
+!.config/alacritty/alacritty.yml
+
+# ZSH
+!.zshenv
 !.config/zsh/
 !.config/zsh/.zshrc
 !.config/zsh/scripts/
@@ -19,7 +23,7 @@
 # Powerlevel10K
 !.config/zsh/.p10k.zsh
 
-# Files related to Neovim
+# Neovim
 !.config/nvim/
 !.config/nvim/init.vim
 
