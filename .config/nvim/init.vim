@@ -1,3 +1,16 @@
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+" Install vim-plug if not found
+let data_dir = $HOME . '/.config/nvim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent !curl -fLo  data_dir . '/autoload/plug.vim' --create-dirs
+        \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " Add all the plugins
 call plug#begin()
     Plug 'preservim/nerdtree'
@@ -6,7 +19,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-# Map NERDTree default keybinds
+" Map NERDTree default keybinds
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
