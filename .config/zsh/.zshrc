@@ -16,10 +16,10 @@ znap prompt romkatv/powerlevel10k
 [[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Source other plugins
-znap source zdharma-continuum/fast-syntax-highlighting
-znap source marlonrichert/zsh-autocomplete
-znap source hlissner/zsh-autopair
-
+znap source 'zdharma-continuum/fast-syntax-highlighting'
+znap source 'marlonrichert/zsh-autocomplete'
+znap source 'hlissner/zsh-autopair'
+znap source 'jeffreytse/zsh-vi-mode'
 
 # Set options for long-runnig task completion notifications
 AUTO_NOTIFY_THRESHOLD=120
