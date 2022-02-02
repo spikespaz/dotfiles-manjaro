@@ -21,6 +21,9 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+" Allow loading plugins based on file type
+filetype plugin on
+
 " Allow truecolor support if possible
 if has('termguicolors')
     set termguicolors
@@ -53,10 +56,19 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Set neoscroll default options with everything enabled
 lua require('neoscroll').setup()
 
-" Set mouse to always enabled (normal, visual, insert, and command modes)
-set mouse=a
 " Compatibility mode is force-enabled on some distributions
 set nocompatible
 " Use the system clipboard by default
 set clipboard=unnamedplus
+" Set mouse to always enabled (normal, visual, insert, and command modes)
+set mouse=a
+" Display this number of spaces for tab characters
+set tabstop=4
+" Setting this allows backspace to match tabstop
+set softtabstop=4
+" Insert spaces when the tab key is pressed
+set expandtab
+" Show absolute line numbers by default
+set number
+
 
