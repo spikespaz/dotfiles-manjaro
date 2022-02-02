@@ -38,6 +38,14 @@ autocmd VimEnter * highlight EndOfBuffer ctermbg=NONE guibg=NONE
 let g:sonokai_enable_italic = 1
 let g:sonokai_better_performance = 1
 
+function! s:sonokai_custom() abort
+    let l:configuration = sonokai#get_configuration()
+    let l:palette = sonokai#get_palette(l:configuration.style)
+    call sonokai#highlight('VertSplit', l:palette.grey, l:palette.bg1)
+endfunction
+
+autocmd ColorScheme sonokai call s:sonokai_custom()
+
 " Set the color scheme to Sonokai
 colorscheme sonokai
 
