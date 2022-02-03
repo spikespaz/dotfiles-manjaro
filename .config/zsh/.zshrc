@@ -49,3 +49,10 @@ bindkey -v
 # Set generic keybinds
 bindkey '^[[3~' delete-char
 
+# Custom aliases for ls command
+if command -v lsd &> /dev/null; then
+    alias ls='lsd'
+    alias ll='lsd -l'
+    alias lh='lsd -la'
+fi
+
