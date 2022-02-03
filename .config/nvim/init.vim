@@ -3,13 +3,12 @@
 let data_dir = $HOME . '/.config/nvim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
     silent !curl -fLo  data_dir . '/autoload/plug.vim' --create-dirs
-        \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        \'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    \| PlugInstall --sync | source $MYVIMRC
-\| endif
+    \| PlugInstall --sync | source $MYVIMRC | endif
 
 " Add all the plugins
 call plug#begin()
@@ -42,6 +41,7 @@ function! s:sonokai_custom() abort
     let l:configuration = sonokai#get_configuration()
     let l:palette = sonokai#get_palette(l:configuration.style)
     call sonokai#highlight('VertSplit', l:palette.grey, l:palette.bg1)
+    set fillchars+=vert:┃
 endfunction
 
 autocmd ColorScheme sonokai call s:sonokai_custom()
