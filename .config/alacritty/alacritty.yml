@@ -4,7 +4,11 @@
 # or add any that are missing, see the latest sample file
 # from Alacritty's GitHub releases.
 
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
+
 window:
+  opacity: 0.95
   dimensions:
     columns: 110
     lines: 32
@@ -50,8 +54,6 @@ bell:
   animation: EaseOutQuart
   duration: 100
   color: '0x404040'
-
-background_opacity: 0.9
 
 cursor:
   style:
