@@ -1,3 +1,13 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Source the P10k configuration
+[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
+
 # Increase history size
 HISTFILE="$ZDOTDIR/.histfile"
 HISTSIZE=100000
@@ -9,13 +19,8 @@ ZNAP_PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60))
 # Source the initializer for znap
 source "$ZDOTDIR/scripts/znap_init.zsh"
 
-# Enable znap's instant prompt rather than Powerline's
-znap prompt romkatv/powerlevel10k
-
-# Source the P10k configuration
-[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
-
 # Source other plugins
+znap source 'romkatv/powerlevel10k'
 znap source 'zdharma-continuum/fast-syntax-highlighting'
 znap source 'marlonrichert/zsh-autocomplete'
 znap source 'hlissner/zsh-autopair'
@@ -28,7 +33,6 @@ AUTO_NOTIFY_BODY='With exit code %exit_code after %elapsed seconds.'
 AUTO_NOTIFY_EXPIRE_TIME=15000
 
 znap source MichaelAquilina/zsh-auto-notify
-
 
 # Set options for automatic terminal title
 ZSH_TAB_TITLE_DEFAULT_DISABLE_PREFIX=true
@@ -55,4 +59,3 @@ if command -v lsd &> /dev/null; then
     alias ll='lsd -l'
     alias lh='lsd -la'
 fi
-
