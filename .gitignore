@@ -7,6 +7,11 @@
 
 # And now, the rest of this is just a whitelist for the directories and
 # files that should be automatically detected for version control.
+
+# Add ~/.profile which is used for all interactive shells
+!.profile
+
+# The main config directory
 !.config/
 
 # Alacritty
