@@ -60,5 +60,5 @@ alias sunvim='sudo -E nvim'
 if command -v lsd &> /dev/null; then
     alias ls='lsd'
     alias ll='lsd -l'
-    alias lh='lsd -la'
+  alias la='lsd -la'
 fi
