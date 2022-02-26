@@ -71,3 +71,8 @@ if command -v xcp &> /dev/null; then
     alias cp='xcp'
     #source "$ZDOTDIR/scripts/xcpmv.zsh"
 fi
+
+# Enable alias for thefuck
+if command -v thefuck &> /dev/null; then
+  eval "$(thefuck --alias)"
+fi
