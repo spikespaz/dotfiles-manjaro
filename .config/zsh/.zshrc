@@ -44,10 +44,13 @@ znap source trystan2k/zsh-tab-title
 # Useful shell options
 setopt autocd extendedglob nomatch
 
+# Prevent zsh from hanging up on running processes
+setopt NO_HUP
+
 # Don't notify on background processes
 unsetopt notify
 
-# Enable key for Vi mode
+# Enable key for vi mode
 bindkey -v
 
 # Set generic keybinds
