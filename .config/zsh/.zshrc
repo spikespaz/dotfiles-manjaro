@@ -53,6 +53,9 @@ bindkey -v
 # Set generic keybinds
 bindkey '^[[3~' delete-char
 
+# Add an alias for starting nvim with the user's environment when running as root
+alias sunvim='sudo -E nvim'
+
 # Custom aliases for ls command
 if command -v lsd &> /dev/null; then
     alias ls='lsd'
