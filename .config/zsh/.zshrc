@@ -65,3 +65,9 @@ if command -v lsd &> /dev/null; then
     alias ll='lsd -l'
   alias la='lsd -la'
 fi
+
+# Custom aliases for cp command
+if command -v xcp &> /dev/null; then
+    alias cp='xcp'
+    #source "$ZDOTDIR/scripts/xcpmv.zsh"
+fi
