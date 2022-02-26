@@ -27,12 +27,12 @@ znap source 'hlissner/zsh-autopair'
 znap source 'jeffreytse/zsh-vi-mode'
 
 # Set options for long-runnig task completion notifications
-AUTO_NOTIFY_THRESHOLD=120
+AUTO_NOTIFY_THRESHOLD=300
 AUTO_NOTIFY_TITLE='Command "%command" has completed!'
 AUTO_NOTIFY_BODY='With exit code %exit_code after %elapsed seconds.'
 AUTO_NOTIFY_EXPIRE_TIME=15000
 
-znap source MichaelAquilina/zsh-auto-notify
+znap source 'MichaelAquilina/zsh-auto-notify'
 
 # Set options for automatic terminal title
 ZSH_TAB_TITLE_DEFAULT_DISABLE_PREFIX=true
