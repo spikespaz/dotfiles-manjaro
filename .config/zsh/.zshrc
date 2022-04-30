@@ -76,10 +76,15 @@ ZSH_TAB_TITLE_ADDITIONAL_TERMS='alacritty'
 
 znap source 'trystan2k/zsh-tab-title'
 
-# Useful shell options
-setopt autocd extendedglob nomatch
 
+# If a command is invalid, assume it is a path and change to it
+setopt AUTO_CD
+# Necessary for advanced globbing
+setopt EXTENDED_GLOB
+# Print an error when path expansion fails
+setopt NOMATCH
 # Prevent zsh from hanging up on running processes
+# Why is this needed, is something broken?
 setopt NO_HUP
 
 # Don't notify on background processes
@@ -96,8 +101,8 @@ alias sunvim='sudo -E nvim'
 
 # Custom aliases for ls command
 if command -v lsd &> /dev/null; then
-    alias ls='lsd'
-    alias ll='lsd -l'
+  alias ls='lsd'
+  alias ll='lsd -l'
   alias la='lsd -la'
 fi
 
