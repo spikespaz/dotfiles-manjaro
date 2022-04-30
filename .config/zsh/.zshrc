@@ -47,9 +47,19 @@ source "$ZDOTDIR/scripts/znap_init.zsh"
 # Source other plugins
 znap source 'romkatv/powerlevel10k'
 znap source 'zdharma-continuum/fast-syntax-highlighting'
-znap source 'marlonrichert/zsh-autocomplete'
-znap source 'hlissner/zsh-autopair'
 znap source 'jeffreytse/zsh-vi-mode'
+znap source 'hlissner/zsh-autopair'
+
+# Set options for autocomplete
+zstyle ':autocomplete:*' min-delay 0.5
+zstyle ':autocomplete:*' min-input 1
+zstyle ':autocomplete:*' insert-unambiguous yes
+zstyle ':autocomplete:*' fzf-completion yes
+
+znap source 'marlonrichert/zsh-autocomplete'
+
+# Add some built-in completions
+zstyle ':completion:*:paths' path-completion yes
 
 # Set options for long-runnig task completion notifications
 AUTO_NOTIFY_THRESHOLD=300
@@ -64,7 +74,7 @@ ZSH_TAB_TITLE_DEFAULT_DISABLE_PREFIX=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 ZSH_TAB_TITLE_ADDITIONAL_TERMS='alacritty'
 
-znap source trystan2k/zsh-tab-title
+znap source 'trystan2k/zsh-tab-title'
 
 # Useful shell options
 setopt autocd extendedglob nomatch
