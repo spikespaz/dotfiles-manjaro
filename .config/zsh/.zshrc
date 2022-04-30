@@ -124,3 +124,10 @@ fi
 [ -f '/opt/asdf-vm/asdf.sh' ] &&
   source '/opt/asdf-vm/asdf.sh'
 
+# This is for Rust 1.59. Incremental compilation was disabled because of a bug and will be fixed in the next version.
+export RUSTC_FORCE_INCREMENTAL=1
+
+# For binaries from 'cargo install'
+[ -d "$HOME/.cargo/bin" ]
+  export PATH="$PATH:$HOME/.cargo/bin"
+
