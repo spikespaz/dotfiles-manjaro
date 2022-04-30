@@ -31,6 +31,11 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_SAVE_NO_DUPS
 # Incremental history, rather than waiting for the shell to exit. Useful for crashes.
 setopt INC_APPEND_HISTORY
+# Allow comments in interactive mode
+setopt INTERACTIVE_COMMENTS
+# Disable the annoying BIOS bell.
+# Note that my terminal emulator simply flashes the screen so this is disabled.
+#unsetopt HIST_BEEP
 
 # Update plugins every two days
 ZNAP_PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60))
