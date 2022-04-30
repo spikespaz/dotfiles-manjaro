@@ -119,3 +119,8 @@ fi
 if command -v thefuck &> /dev/null; then
   eval "$(thefuck --alias)"
 fi
+
+# Source the asdf version manager
+[ -f '/opt/asdf-vm/asdf.sh' ] &&
+  source '/opt/asdf-vm/asdf.sh'
+
