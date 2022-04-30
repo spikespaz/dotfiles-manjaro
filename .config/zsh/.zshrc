@@ -9,9 +9,28 @@ fi
 [[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Increase history size
-HISTFILE="$ZDOTDIR/.histfile"
-HISTSIZE=100000
-SAVEHIST=100000
+HISTFILE="$ZDOTDIR/.history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+# Allow multiple sessions to append to the history rather than overwriting it
+setopt APPEND_HISTORY
+# Save timestamps to history
+setopt EXTENDED_HISTORY
+# Drop older duplicates in history when trimming (when HISTSIZE is larger than SAVEHIST)
+setopt HIST_EXPIRE_DUPS_FIRST
+# Remove older duplicates from history
+setopt HIST_IGNORE_ALL_DUPS
+# Successive duplicate entries will collapse to the first one rather than rewriting
+setopt HIST_IGNORE_DUPS
+# Commands can be ignored by history when prefixed with a space
+setopt HIST_IGNORE_SPACE
+# Trim trailing whitespace (and prefix without HIST_IGNORE_SPACE)
+setopt HIST_REDUCE_BLANKS
+# When rewriting/trimming history, remove the oldest duplicates
+setopt HIST_SAVE_NO_DUPS
+# Incremental history, rather than waiting for the shell to exit. Useful for crashes.
+setopt INC_APPEND_HISTORY
 
 # Update plugins every two days
 ZNAP_PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60))
