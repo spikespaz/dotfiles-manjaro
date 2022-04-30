@@ -57,6 +57,13 @@ zstyle ':autocomplete:*' fzf-completion yes
 
 znap source 'marlonrichert/zsh-autocomplete'
 
+# To be safe, source fzf completions after autocomplete because
+# autocomplete likes to bulldoze
+znap install 'chitoku-k/fzf-zsh-completions'
+
+# Autocomplete for docker commands
+znap install 'docker/cli'
+
 # Add some built-in completions
 zstyle ':completion:*:paths' path-completion yes
 
