@@ -42,6 +42,7 @@ ZNAP_PLUGINS_AUTOUPDATE_INTERVAL=$((2*24*60*60))
 
 # Source the initializer for znap
 source "$ZDOTDIR/scripts/znap_init.zsh"
+#source "$ZDOTDIR/scripts/less_termcap.sh"
 
 # Source other plugins
 znap source 'romkatv/powerlevel10k'
