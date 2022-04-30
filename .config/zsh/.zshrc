@@ -46,7 +46,6 @@ source "$ZDOTDIR/scripts/znap_init.zsh"
 
 # Source other plugins
 znap source 'romkatv/powerlevel10k'
-znap source 'zdharma-continuum/fast-syntax-highlighting'
 znap source 'jeffreytse/zsh-vi-mode'
 znap source 'hlissner/zsh-autopair'
 
@@ -76,6 +75,10 @@ ZSH_TAB_TITLE_ADDITIONAL_TERMS='alacritty'
 
 znap source 'trystan2k/zsh-tab-title'
 
+# Source this last
+#znap source 'zdharma-continuum/fast-syntax-highlighting'
+#znap source 'z-shell/fast-syntax-highlighting'
+znap source 'zsh-users/zsh-syntax-highlighting'
 
 # If a command is invalid, assume it is a path and change to it
 setopt AUTO_CD
